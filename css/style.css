@@ -1,6 +1,6 @@
 @font-face {
 font-family: 'Electroharmonix';
-src: url('../fonts/Stardew Valley Regular.ttf') format('truetype');
+src: url('../fonts/electroharmonix.ttf') format('truetype');
 }
 body {
 font-family: 'Inter', sans-serif;
@@ -597,7 +597,7 @@ font-family: 'Electroharmonix';
 #Skills {
 position: relative;
 z-index: 1;
-background-color: #202147;
+background-color: #fae693;
 margin-top: -91px;
 }
 #Contact-Me {
