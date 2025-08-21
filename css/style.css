@@ -91,6 +91,7 @@ bottom: 0px;
 right: 0px;
 width: 250px;
 height: auto;
+z-index: 1;
 }
 .bottom-left-svg {
 position: absolute;
@@ -98,12 +99,14 @@ bottom: 0px;
 left: 0px;
 width: 370px;
 height: auto;
+z-index: 1;
 }
 .bottom-center-svg,
 .bottom-center-svg2,
 .bottom-center-svg3,
 .bottom-center-svg4,
-.bottom-center-svg5 {
+.bottom-center-svg5,
+.bottom-center-svg6 {
   position: absolute;
   width: 100%;
   left: 0;
@@ -113,24 +116,32 @@ height: auto;
 }
 
 .bottom-center-svg {
-  bottom: 10px;
+  bottom: 0px;
+  z-index: 0;
 }
-
 .bottom-center-svg2 {
-  bottom: 35px;
+  bottom: 0px;
+  z-index: 0;
 }
-
 .bottom-center-svg3 {
-  bottom: 0;
+  bottom: 0px;
+  z-index: 0;
 }
-
 .bottom-center-svg4 {
-  bottom: 0;
+  bottom: 0px;
+  z-index: 0;
 }
-
 .bottom-center-svg5 {
+  bottom: 0px;
+  z-index: 0;
+}
+.bottom-center-svg6 {
   bottom: -250px;
 }
+
+
+
+
 
 
 

@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialBottom2 = parseFloat(getComputedStyle(svg2).bottom);
     const initialBottom3 = parseFloat(getComputedStyle(svg3).bottom);
     const initialBottom4 = parseFloat(getComputedStyle(svg4).bottom);
+    const initialBottom5 = parseFloat(getComputedStyle(svg5).bottom);
+
 
     // Add an event listener for the 'scroll' event on the window
     window.addEventListener('scroll', () => {
@@ -27,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const speed1 = 0.5; // Moves 0.5px down for every 1px scrolled down
         const speed2 = 0.4; // Moves 0.4px down for every 1px scrolled down
         const speed3 = 0.3; // Moves 0.3px down for every 1px scrolled down
-        const speed4 = 0.2; // Moves 0.2px down for every 1px scrolled down
+        const speed4 = 0.2;
+        const speed5 = 0.1; // Moves 0.2px down for every 1px scrolled down
         // svg5 remains stationary or moves very little, acting as the 'base'
 
         // Calculate the new vertical position for each SVG using transform: translateY().
@@ -47,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (svg4) {
             svg4.style.transform = `translateY(${scrollY * speed4}px)`;
         }
-
+        if (svg5) {
+            svg5.style.transform = `translateY(${scrollY * speed5}px)`;
+        }
         // svg5 doesn't need to move if it's the element they collapse under.
         // If you wanted svg5 to also have a very slight parallax, you could add:
         // if (svg5) {
