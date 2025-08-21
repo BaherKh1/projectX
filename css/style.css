@@ -8,6 +8,8 @@ margin: 0;
 padding: 0;
 background: #EEDAAE;
 color: #333;
+background-image: url('../assets/sky.png');
+background-repeat: no-repeat;
 }
 header {
 width: 100%;
@@ -29,7 +31,7 @@ font-family: 'Electroharmonix';
 nav ul li a {
 position: relative;
 font-size: 1.7rem;
-color: #333;
+color: #e0a001;
 text-decoration: none;
 padding-bottom: 5px;
 }
@@ -669,7 +671,7 @@ background-color: rgba(255, 255, 255, 0.1);
 border: 2px solid #e24c4b;
 border-radius: 15px;
 text-align: center;
-color: #EEDAAE;
+color: #000000;
 }
 .skill-box h3 {
 font-size: 1.5rem;
