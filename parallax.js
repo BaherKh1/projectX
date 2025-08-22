@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // A higher value means the element moves faster relative to the scroll.
         // For a "collapse down" effect, higher speed means it moves down faster.
         // We want svg1 to move down fastest, then svg2, and so on.
-        const speed1 = 0.5; // Moves 0.5px down for every 1px scrolled down
-        const speed2 = 0.4; // Moves 0.4px down for every 1px scrolled down
-        const speed3 = 0.3; // Moves 0.3px down for every 1px scrolled down
-        const speed4 = 0.2;
+        const speed1 = 0.39; // Moves 0.5px down for every 1px scrolled down
+        const speed2 = 0.33; // Moves 0.4px down for every 1px scrolled down
+        const speed3 = 0.29; // Moves 0.3px down for every 1px scrolled down
+        const speed4 = 0.22;
         const speed5 = 0.1; // Moves 0.2px down for every 1px scrolled down
         // svg5 remains stationary or moves very little, acting as the 'base'
 
@@ -61,3 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // }
     });
 });
+
+    // Get the current hour (0-23)
+    const currentHour = new Date().getHours();
+    
+    // Get the body element
+    const body = document.body;
+    
+    // Set the background image based on the time of day
+    if (currentHour >= 6 && currentHour < 20) {
+        // It's daytime (6 AM to 6 PM)
+        body.style.setProperty('--background-image', 'url("../assets/skyst.png")');
+    } else {
+        // It's nighttime (6 PM to 6 AM)
+        body.style.setProperty('--background-image', 'url("../assets/sky.png")');
+    }
