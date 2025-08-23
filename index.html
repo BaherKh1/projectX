@@ -31,21 +31,6 @@
         <li><a href="#Projects">Projects</a></li>
         <li><a href="#Work-Experience">Work Experience</a></li>
         <li><a href="#Contact-Me">Contact Me</a></li>
-        <div class="custom-audio-player">
-          <audio id="myAudio" loop>
-            <source src="audio/audio.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-          <button id="playPauseBtn" class="play-btn">
-            <img id="playPauseIcon" src="assets/play-button.png" alt="Play/Pause">
-          </button>
-          <div class="controls-container">
-            <div class="progress-bar-container">
-              <div id="progressBar" class="progress-bar"></div>
-            </div>
-            <input type="range" id="volumeControl" class="volume-control" min="0" max="1" step="0.01" value="0.5">
-          </div>
-        </div>
       </ul>
     </nav>
   </header>
@@ -59,42 +44,51 @@
       </div>
     </section>
 
-    <section id="Skills" class="content-section">
-            <h2>My Skills</h2>
-                  <div class="skills-grid">
-                <div class="skill-box">
-                    <h3>LANGUAGES</h3>
-                    <ul>
-                        <li>JAVA: SPRING-BOOT</li>
-                        <li>Python</li>
-                        <li>HTML CSS JS</li>
-                      </ul>
-                  </div>
-                <div class="skill-box">
-                    <h3>CLOUD & DEVOPS</h3>
-                    <ul>
-                        <li>AWS (EC2, Lambda, S3, RDS, API Gateway)</li>
-                        <li>SSH</li>
-                        <li>DOCKER</li>
-                        <li>GIT</li>
-                      </ul>
-                  </div>
-                <div class="skill-box">
-                    <h3>PRACTICES</h3>
-                    <ul>
-                        <li>MICROSERVICES ARCHITECTURE</li>
-                        <li>AGILE METHODOLOGIES</li>
-                        <li>CI/CD</li>
-                      </ul>
-                  </div>
-              </div>
-                  <img src="assets/Group 19.svg" alt="Decoration" class="left-section2-svg" />
-            <img src="assets/Group 20.svg" alt="Decoration" class="right-section2-svg" />
-            <img src="assets/Group.svg" alt="Decoration" class="left-corner-section2-svg" />
-            <img src="assets/Group 22.svg" alt="Decoration" class="bottom-center-section2-svg" />
-            <img src="assets/Group 21.svg" alt="Decoration" class="right-corner-section2-svg" />
-            <img src="assets/Group-1.svg" alt="A visual representation of skills" class="skills-image">
-          </section>
+<section id="Skills" class="content-section">
+    <div class="skills-container">
+        <div class="skill-item">
+            <img src="assets/spring-boot.png" alt="Spring Boot Logo" class="skill-image">
+            <div class="skill-text">
+                <h3>Spring Boot</h3>
+                <p>I build robust, production-grade applications using Spring Boot, focusing on microservices architecture and REST APIs.</p>
+            </div>
+        </div>
+        <div class="skill-item">
+            <img src="assets/aws.png" alt="AWS Logo" class="skill-image">
+            <div class="skill-text">
+                <h3>AWS</h3>
+                <p>My skills include deploying applications on AWS using services like EC2, S3, RDS, and API Gateway for scalable and reliable solutions.</p>
+            </div>
+        </div>
+        <div class="skill-item">
+            <img src="assets/docker.png" alt="Docker Logo" class="skill-image">
+            <div class="skill-text">
+                <h3>Docker</h3>
+                <p>I use Docker to containerize applications, ensuring consistent environments across development and production.</p>
+            </div>
+        </div>
+        <div class="skill-item">
+            <img src="assets/git.png" alt="Git Logo" class="skill-image">
+            <div class="skill-text">
+                <h3>Git</h3>
+                <p>I am proficient in using Git for version control, collaborative development, and managing codebases.</p>
+            </div>
+        </div>
+        <div class="skill-item">
+            <img src="assets/python.png" alt="Python Logo" class="skill-image">
+            <div class="skill-text">
+                <h3>Python</h3>
+                <p>I have experience with Python for scripting, automation, and building backend services.</p>
+            </div>
+        </div>
+    </div>
+    <img src="assets/Group 19.svg" alt="Decoration" class="left-section2-svg" />
+    <img src="assets/Group 20.svg" alt="Decoration" class="right-section2-svg" />
+    <img src="assets/Group.svg" alt="Decoration" class="left-corner-section2-svg" />
+    <img src="assets/Group 22.svg" alt="Decoration" class="bottom-center-section2-svg" />
+    <img src="assets/Group 21.svg" alt="Decoration" class="right-corner-section2-svg" />
+    <img src="assets/Group-1.svg" alt="A visual representation of skills" class="skills-image">
+</section>
 
 
         <section id="Projects" class="content-section">
