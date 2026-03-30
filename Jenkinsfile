@@ -20,7 +20,7 @@ pipeline {
             echo "index.html exists."
 
             // This will FAIL the build if "Baher" is NOT found
-            bat 'findstr /I /C:"Baher" index.html || exit 1'
+            bat 'findstr /I /C:"Baheeeeeer" index.html || exit 1'
 
           } else {
             error "index.html not found!"
