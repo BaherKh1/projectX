@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Mail') {
       steps {
-        mail(subject: 'Commit', body: 'Commits done')
+        mail(subject: 'Commit', body: 'Commits done', to: 'baher.khaldii@gmail.com')
       }
     }
 
