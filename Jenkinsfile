@@ -1,27 +1,20 @@
 pipeline {
-  agent any
-  stages {
-    stage('Mail') {
-      steps {
-        mail(subject: 'Commit', body: 'Commits done', to: 'baher.khaldii@gmail.com')
-      }
-    }
-
-    stage('Test') {
-      steps {
-        archiveArtifacts(allowEmptyArchive: true, artifacts: 'a')
-        sh '''pipeline {
     agent any
     stages {
-        stage(\'Test Index HTML\') {
+        stage('Mail Notification') {
+            steps {
+                // This requires SMTP configured in Manage Jenkins -> System
+                mail(subject: 'Build Started', body: 'Commits detected, starting build...', to: 'baher.khaldii@gmail.com')
+            }
+        }
+
+        stage('Test & Validate') {
             steps {
                 script {
-                    // Check if file exists
-                    if (fileExists(\'index.html\')) {
+                    if (fileExists('index.html')) {
                         echo "index.html exists."
-                        
-                        // Validate content using grep (returns exit code 0 if found)
-                        sh \'grep -q "Welcome" index.html || (echo "Content missing!" && exit 1)\'
+                        // Check for content; -q means 'quiet' (just returns exit code)
+                        sh 'grep -q "Welcome" index.html'
                         echo "Content validation passed."
                     } else {
                         error "index.html not found!"
@@ -29,11 +22,11 @@ pipeline {
                 }
             }
         }
+        
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'index.html', allowEmptyArchive: true
+            }
+        }
     }
 }
-'''
-        }
-      }
-
-    }
-  }
