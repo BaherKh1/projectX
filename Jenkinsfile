@@ -1,6 +1,12 @@
 pipeline {
   agent any
+
+  triggers {
+    pollSCM('* * * * *')
+  }
+
   stages {
+
     stage('Mail Notification') {
       steps {
         bat 'echo "Hello"'
@@ -12,24 +18,55 @@ pipeline {
         script {
           if (fileExists('index.html')) {
             echo "index.html exists."
-            // Fixed: Using 'bat' and 'findstr' for Windows
-            bat 'findstr /I /C:"Baher" index.html'
+
+            // This will FAIL the build if "Baher" is NOT found
+            bat 'findstr /I /C:"Baher" index.html || exit 1'
+
           } else {
             error "index.html not found!"
           }
         }
-
       }
     }
 
     stage('Archive') {
       steps {
-        archiveArtifacts(artifacts: 'index.html', allowEmptyArchive: true)
+        archiveArtifacts artifacts: 'index.html', allowEmptyArchive: true
+      }
+    }
+  }
+
+  post {
+
+    success {
+      echo "Build succeeded ✅"
+    }
+
+    failure {
+      script {
+        def payload = """
+        {
+          "job": "${env.JOB_NAME}",
+          "build": "${env.BUILD_NUMBER}",
+          "url": "${env.BUILD_URL}",
+          "status": "FAILURE",
+          "branch": "${env.GIT_BRANCH}",
+          "commit": "${env.GIT_COMMIT}",
+          "message": "Keyword 'Baher' not found in index.html"
+        }
+        """
+
+        // Send failure data to n8n webhook
+        bat """
+        curl -X http://localhost:5678/webhook-test/jenkins-failure ^
+        -H "Content-Type: application/json" ^
+        -d "${payload}"
+        """
       }
     }
 
-  }
-  triggers {
-    pollSCM('* * * * *')
+    always {
+      echo "Pipeline finished."
+    }
   }
 }
