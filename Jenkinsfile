@@ -9,17 +9,7 @@ pipeline {
 
     stage('Test & Validate') {
       steps {
-        script {
-          if (fileExists('index.html')) {
-            echo "index.html exists."
-            // Check for content; -q means 'quiet' (just returns exit code)
-            sh 'grep -q "Welcome" index.html'
-            echo "Content validation passed."
-          } else {
-            error "index.html not found!"
-          }
-        }
-
+        bat 'findstr /C:"Welcome" index.html'
       }
     }
 
