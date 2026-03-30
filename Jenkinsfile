@@ -5,13 +5,12 @@ pipeline {
     pollSCM('* * * * *')
   }
 
-  stages {
-
-    stage('Mail Notification') {
-      steps {
-        bat 'echo "Hello"'
-      }
-    }
+stage('Mail Notification') {
+  steps {
+    bat 'echo "Hello"'
+    bat 'exit 1'
+  }
+}
 
     stage('Test & Validate') {
       steps {
