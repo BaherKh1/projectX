@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Mail Notification') {
       steps {
-        sh 'echo "Hello"'
+        bat 'bat \'echo "Hello"\''
       }
     }
 
